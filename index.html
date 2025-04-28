@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        
+            <input readonly id="inputValue">
+       
+        
+        <div class="keys">
+            <button onclick="inputDisplay('+')" class="operator">+</button>
+            <button onclick="inputDisplay('7')">7</button>
+            <button onclick="inputDisplay('8')">8</button>
+            <button onclick="inputDisplay('9')">9</button>
+            <button onclick="inputDisplay('-')" class="operator">-</button>
+            <button onclick="inputDisplay('4')">4</button>
+            <button onclick="inputDisplay('5')">5</button>
+            <button onclick="inputDisplay('6')">6</button>
+            <button onclick="inputDisplay('*')" class="operator">*</button>
+            <button onclick="inputDisplay('1')">1</button>
+            <button onclick="inputDisplay('2')">2</button>
+            <button onclick="inputDisplay('3')">3</button>
+            <button onclick="inputDisplay('/')" class="operator">/</button>
+            <button onclick="inputDisplay('0')">0</button>
+            <button onclick="inputDisplay('.')">.</button>
+            <button onclick="inputCalculate()">=</button>
+            <button onclick="inputClear()" class="operator">C</button>
+        </div>
+    </div>
+    <script>
+       const inputValue= document.getElementById('inputValue');
+        function inputDisplay(input){
+            inputValue.value+=input;
+        }
+        function inputClear(){
+            inputValue.value="";
+        }
+        function inputCalculate(){
+            try{
+                inputValue.value= eval(inputValue.value);
+            }
+           catch(error){
+            inputValue.value="Error";
+           }
+        }
+    </script>
+</body>
+</html>
